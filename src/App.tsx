@@ -2,7 +2,9 @@ import "./App.css";
 import { Greeting } from "./components/Greeting";
 import { Person } from "./components/Person";
 import { PersonList } from "./components/PersonList";
-
+import { Parent } from "./components/Parent";
+import { Button } from "./components/Button";
+import { Input } from "./components/Input";
 function App() {
   const personName = {
     firstName: "Ramy",
@@ -17,7 +19,15 @@ function App() {
     <div className="App">
       <Greeting name={"Ramy"} messageCount={10} isLoggedIn={true} />
       <Person name={personName} />
-      <PersonList names={personList} />
+      <Parent>
+        <PersonList names={personList} />
+      </Parent>
+      <Button
+        clickHandler={(event, id) => {
+          console.log("Clicked", event, id);
+        }}
+      />
+      <Input value="" handleChange={(event) => console.log(event)} />
     </div>
   );
 }
