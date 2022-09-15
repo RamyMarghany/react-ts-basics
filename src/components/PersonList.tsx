@@ -8,7 +8,6 @@ interface personListProps {
 export const PersonList = ({ names }: personListProps) => {
   return (
     <>
-      <hr />
       {names.map((name) => (
         <p key={name.firstName}>
           {name.firstName}, {name.lastName}
